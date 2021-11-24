@@ -15,7 +15,7 @@ public class Registration extends AppCompatActivity {
     Spinner mySpinner;
     Button submit;
     TextInputEditText password, confirmPassword;
-    Boolean isAllFieldsChecked = false;
+   Boolean isAllFieldsChecked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,7 @@ public class Registration extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(adapter);
 
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,7 +44,9 @@ public class Registration extends AppCompatActivity {
                 }
             }
         });
+
     } // end of onCreate method
+
 
     private boolean CheckAllFields () {
         if (password.length() == 0) {
@@ -54,7 +57,12 @@ public class Registration extends AppCompatActivity {
             confirmPassword.setError("This field is required");
             return false;
         }
+        if(password.getText() != confirmPassword.getText()){
+            confirmPassword.setError("password and confirm password are not same");
+            return false;
+        }
 
         return true;
     }
+
 }
