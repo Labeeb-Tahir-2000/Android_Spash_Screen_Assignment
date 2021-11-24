@@ -24,7 +24,7 @@ Button Login;
         Login = (Button) findViewById(R.id.login);
 
 
-        Login.setOnClickListener(new View.OnClickListener() { // registration
+        Login.setOnClickListener(new View.OnClickListener() { // Login
             @Override
             public void onClick(View v) { // callback method
                 Intent intent = new Intent(LogIn.this,Welcome.class);
